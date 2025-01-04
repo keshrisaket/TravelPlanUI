@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+       <link rel="stylesheet" href="travelplan.css">
+       <script src="travelplan.js" defer></script>
+
+</head>
+
+<body>
+
+
+       <h1>Travel Plan Manager Portal</h1>
+
+       <div class="container">
+              <h2>Add New Travel Plan</h2>
+              <form id="travelForm">
+                     <input type="text" id="destination" placeholder="Plan Name" required><br>
+
+                     <div class="budget-container">
+                            <select id="categorySelect">
+                                   <option value="">Select Category</option>
+                                   <option value="Economy">Economy</option>
+                                   <option value="Premium">Premium</option>
+                                   <option value="Luxury">Luxury</option>
+                            </select>
+                            <div id="budgetInputContainer" style="display:none;">
+                                   <input type="number" id="budgetInput" placeholder="Min Budget ($)">
+                                   <button type="button" id="addBudgetButton">Add Budget</button>
+                            </div>
+                     </div>
+
+                     <div id="budgets" class="budget-item"></div>
+
+                     <input type="text" id="description" placeholder="Plan Description" required><br>
+
+                     <button type="submit">Add New Plan</button>
+                     <div id="message" class="message"></div>
+              </form>
+
+              <h2>Travel Plans</h2>
+              <table id="travelTable">
+                     <thead>
+                            <tr>
+                                   <th>Plan ID</th>
+                                   <th>Plan Name</th>
+                                   <th>Plan Category</th>
+                                   <th>Min Budget ($)</th>
+                                   <th>Description</th>
+                                   <th>Actions</th>
+                                   <th>Status</th>
+                            </tr>
+                     </thead>
+                     <tbody>
+                            <!-- Dynamic rows will be added here -->
+                     </tbody>
+              </table>
+
+              <div id="editForm" class="edit-form">
+                     <h2>Edit Travel Plan</h2>
+                     <input type="text" id="editDestination" placeholder="Plan Name" required><br>
+                     <select id="editCategory">
+                            <option value="">Select Category</option>
+                            <option value="Economy">Economy</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Luxury">Luxury</option>
+                     </select><br>
+                     <input type="number" id="editBudget" placeholder="Min Budget ($)" required><br>
+                     <input type="text" id="editDescription" placeholder="Plan Description" required><br>
+                     <button id="updatePlanButton">Update Plan</button>
+                     <button id="cancelEditButton">Cancel</button>
+              </div>
+       </div>
+
+
+</body>
+
+</html>
